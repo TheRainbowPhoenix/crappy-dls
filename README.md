@@ -2,4 +2,4 @@
 crappy sqlite website test
 
 
-`stat -c%s web/games.db`
+`bash chunk-db.sh games.db web/db`

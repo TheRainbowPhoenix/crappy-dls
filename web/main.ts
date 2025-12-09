@@ -29,18 +29,17 @@ async function getWorker(): Promise<WorkerHttpvfs> {
 
       const worker = await createDbWorker(
         [
+          
           {
             from: "inline",
             config: {
-              // "full" = single .sqlite file, accessed via HTTP range
-              serverMode: "chunked",
-              url: DB_URL, // will be .db0 
-              requestChunkSize: 53059584, // 4 KiB is fine
-              databaseLengthBytes: 53059584,
-              serverChunkSize: 16374309,
-              suffixLength: 0,
-              urlPrefix: DB_URL // will be .db0 
-            },
+              "serverMode": "chunked",
+              "requestChunkSize": 4096,
+              "databaseLengthBytes": 53059584,
+              "serverChunkSize": 1048576,
+              "urlPrefix": "./db/db.sqlite3.",
+              "suffixLength": 3
+            }
           },
         ],
         workerUrl.toString(),
