@@ -36,7 +36,7 @@ async function getWorker(): Promise<WorkerHttpvfs> {
               serverMode: "full",
               url: DB_URL,
               requestChunkSize: 4096, // 4 KiB is fine
-              databaseLengthBytes: 53059584
+              fileLength: 53059584
             },
           },
         ],
