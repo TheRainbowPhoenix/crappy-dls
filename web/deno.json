@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "sql.js-httpvfs": "npm:sql.js-httpvfs@^0.8.12"
+  },
+  "tasks": {
+    "dev": "deno run --allow-net --allow-read https://deno.land/std/http/file_server.ts . --port 8999",
+    "build": "deno bundle main.ts > bundle.js"
+  }
+}

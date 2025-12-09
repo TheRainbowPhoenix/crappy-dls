@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Games DB Explorer</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #0b0b15;
+      color: #f5f5ff;
+    }
+    h1 { font-size: 1.2rem; margin-top: 0; }
+    textarea {
+      width: 100%;
+      height: 8rem;
+      box-sizing: border-box;
+      background: #181824;
+      color: #f5f5ff;
+      border-radius: .4rem;
+      border: 1px solid #33334a;
+      padding: .5rem;
+    }
+    button {
+      margin-top: .5rem;
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      border: 1px solid #4fa3ff;
+      background: #4fa3ff;
+      color: #fff;
+      cursor: pointer;
+      font-size: .85rem;
+    }
+    button:disabled { opacity: .6; cursor: default; }
+    #status {
+      font-size: .8rem;
+      margin-left: .5rem;
+      color: #bbb;
+    }
+    pre {
+      margin-top: 1rem;
+      background: #11111c;
+      border-radius: .4rem;
+      border: 1px solid #2a2a3a;
+      padding: .5rem;
+      max-height: 60vh;
+      overflow: auto;
+      font-size: .8rem;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <h1>Games DB Explorer</h1>
+  <p>Run read-only SQL against <code>games.db</code> via <code>sql.js-httpvfs</code> (single worker).</p>
+
+  <label for="sql" style="display:block;font-size:.8rem;margin-bottom:.25rem;">SQL query</label>
+  <textarea id="sql">SELECT product_id, work_name, maker_name, sales_date
+FROM games
+ORDER BY sales_date_sort DESC
+LIMIT 10;</textarea>
+  <div>
+    <button id="runBtn">Run query</button>
+    <span id="status"></span>
+  </div>
+
+  <pre id="out">Results will appear here.</pre>
+
+  <script type="module" src="./bundle.js"></script>
+</body>
+</html>
