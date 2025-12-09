@@ -34,9 +34,12 @@ async function getWorker(): Promise<WorkerHttpvfs> {
             config: {
               // "full" = single .sqlite file, accessed via HTTP range
               serverMode: "chunked",
-              url: DB_URL,
+              url: DB_URL, // will be .db0 
               requestChunkSize: 4096, // 4 KiB is fine
-              databaseLengthBytes: 53059584
+              databaseLengthBytes: 53059584,
+              serverChunkSize: 16374309,
+              suffixLength: 0,
+              urlPrefix: DB_URL // will be .db0 
             },
           },
         ],
