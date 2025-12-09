@@ -36,7 +36,7 @@ async function getWorker(): Promise<WorkerHttpvfs> {
               "serverMode": "chunked",
               "requestChunkSize": 4096,
               "databaseLengthBytes": 53059584,
-              "serverChunkSize": 10485760,
+              "serverChunkSize": 4194304,
               "urlPrefix": "./db/db.sqlite3.",
               "suffixLength": 3
             }
