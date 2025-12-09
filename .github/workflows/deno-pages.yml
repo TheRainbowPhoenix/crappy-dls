@@ -37,10 +37,6 @@ jobs:
         working-directory: web
         run: deno bundle main.ts -o bundle.js
 
-      - name: copy db
-        working-directory: web
-        run: cp ../games.db games.db
-
       # Upload everything in web/ as the static site artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
