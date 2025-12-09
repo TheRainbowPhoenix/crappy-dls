@@ -7,7 +7,7 @@ import {
 } from "npm:sql.js-httpvfs@0.8.12";
 
 // Your DB lives at /games.db (served via Deno file server)
-const DB_URL = "/games.db";
+const DB_URL = "./games.db";
 
 // These will resolve to same-origin URLs once bundled.
 // Make sure *actual files* exist at these paths next to bundle.js.

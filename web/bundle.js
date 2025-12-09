@@ -452,7 +452,7 @@ var require_dist = __commonJS({
 
 // main.ts
 var import_npm_sql_js_httpvfs_0_8 = __toESM(require_dist());
-var DB_URL = "/games.db";
+var DB_URL = "./games.db";
 var workerUrl = new URL("./sqlite.worker.js", import.meta.url);
 var wasmUrl = new URL("./sql-wasm.wasm", import.meta.url);
 var workerPromise = null;
